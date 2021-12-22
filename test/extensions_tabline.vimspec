@@ -1,0 +1,11 @@
+Describe extensions_tabline.vim
+  Before all
+    let g:airline#extensions#tabline#enabled = 1
+  End
+
+  It should use a tabline
+    e! CHANGELOG.md
+    sp CONTRIBUTING.md
+    Assert Match(airline#extensions#tabline#get(), '%#airline_tabhid#...| %(%{airline#extensions#tabline#get_buffer_name(\d)}%) %#airline_tabhid_to_airline_tab# %#airline_tab#%(%{airline#extensions#tabline#get_buffer_name(\d)}%) %#airline_tab_to_airline_tabsel# %#airline_tabsel#%(%{airline#extensions#tabline#get_buffer_name(\d)}%) %#airline_tabsel_to_airline_tabfill# %#airline_tabfill#%=%#airline_tabfill_to_airline_tabfill#%#airline_tabfill#%#airline_tabfill_to_airline_tablabel_right#%#airline_tablabel_right# buffers ')
+  End
+End
