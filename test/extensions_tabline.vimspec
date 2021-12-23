@@ -1,7 +1,8 @@
 Describe extensions_tabline.vim
   Before all
-    let g:airline#extensions#tabline#enabled = 1
+    :%bd
   End
+
   It should use a tabline
     e! file1
     Assert Match(airline#extensions#tabline#get(), '%#airline_tabsel# %(%{airline#extensions#tabline#get_buffer_name(\d)}%) |%=%#airline_tabfill_to_airline_tabfill#%#airline_tabfill# buffers' )
