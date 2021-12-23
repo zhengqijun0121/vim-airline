@@ -21,3 +21,8 @@ endfunction
 function! MyAppend2(...)
   call a:1.add_raw('world')
 endfunction
+
+let g:airline#extensions#default#layout = [
+      \ [ 'c', 'a', 'b', 'warning' ],
+      \ [ 'x', 'z', 'y' ]
+      \ ]
